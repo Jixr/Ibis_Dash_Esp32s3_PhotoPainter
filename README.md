@@ -1,6 +1,11 @@
 # 🪶 Ibis Dash - Strava E-Paper Dashboard
 
+This is my fork of the original project, updated to fix a few hardware compatibility issues, simplified code, and a few other QOL fixes. 
+
 An e-paper dashboard that shows your Strava stats. Written with a ton of frustration, mass amounts of trial and error, and the help of Claude. But hey, it works now!
+
+The original version can be found here
+https://github.com/ibisette/Ibis_Dash_Esp32s3_PhotoPainter
 
 ---
 
@@ -16,16 +21,13 @@ That's it. That's the project.
 
 - **Waveshare ESP32-S3-PhotoPainter** - comes with the 7.5" color e-paper display already attached, LiPo battery, and USB-C cable all included
 - **Arduino IDE** - free
-- **Ibis Setup app** - included here, also free (I made it)
-- **A Strava account** - you probably have one if you're here
+- **A Strava account** - you probably have one if you're here ( no strava subscription required ) 
 
 ---
 
 ## How Hard Is This?
 
-If you can follow instructions, you can do this. The actual coding part is done - you just upload my code to the board and configure it with the app. No coding required on your end.
-
-The "hardest" part is getting Strava API credentials, and even that takes like 5 minutes.
+There is some extremely minor copy/paste editing you'll need to do in the code and while connected to Arduino IDE. 
 
 ---
 
@@ -35,9 +37,9 @@ The "hardest" part is getting Strava API credentials, and even that takes like 5
 2. Add ESP32 board support
 3. Install some libraries (GxEPD2, ArduinoJson, XPowersLib, QRCode)
 4. Set the right board settings (see below - this part matters!)
-5. Upload `IBIS_V31.ino` to your board
-6. Open `Ibis.exe`, connect, enter WiFi + Strava credentials
-7. Done. Go for a run.
+5. Upload `IBIS_V40.1.ino` to your board
+6. Copy/Paste in some code to import your wifi, strava, and goal settings.
+7. Done. Go for a ride.
 
 ---
 
@@ -53,6 +55,7 @@ The "hardest" part is getting Strava API credentials, and even that takes like 5
 | Flash Size | 16MB (128Mb) |
 | PSRAM | OPI PSRAM |
 | Partition Scheme | 16M Flash (3MB APP/9.9MB FATFS) |
+| 
 
 The Flash Mode one is important. Ask me how I know.
 
@@ -71,7 +74,7 @@ The Flash Mode one is important. Ask me how I know.
 
 | Button | What it does |
 |--------|--------------|
-| KEY | Absolutely nothing. It's there for vibes. |
+| KEY | Absolutely nothing. In a future update it will cycle through your different activity types (running, swimming, cycling, etc. ) |
 | BOOT | Force screen refresh and data fetch |
 | PWR | Power on/off |
 
@@ -82,22 +85,12 @@ The Flash Mode one is important. Ask me how I know.
 ```
 ibis-dash/
 ├── firmware/
-│   ├── IBIS_V31.ino    ← The Arduino code
-│   └── ibis_logos.h    ← Pixel art logos (yes I made these)
-├── app/
-│   ├── Ibis.exe        ← Windows setup app
-│   └── Ibis.py         ← Python source if you're curious
+│   ├── IBIS_V40.1.ino    ← The Arduino code
 ├── docs/
 │   └── USER_MANUAL.md  ← More detailed instructions if you get stuck
 ├── README.md           ← You are here
 └── LICENSE             ← MIT-ish, see below
 ```
-
----
-
-## Why "Ibis"?
-
-Because, believe it or not, I am a bird. 🪶
 
 ---
 
