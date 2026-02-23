@@ -25,7 +25,8 @@ IBIS_v40.1 Changes
 - Lots of code logic & formatting fixes to simplify and make the display more stable and accurate.
 - Default screen refresh is every 12 hours.
 - Battery Life optimization: The device is set to pull the strava API every 12 hours, but the screen will only refresh if there is a new strava activity ( if you only ride once a week, this could potentially extend the battery life by weeks )
-- Added a data point on the bottom right of the screen to show the Date of last screen refresh. ( easy way to tell if the device is working properly ) 
+- Added a data point on the bottom right of the screen to show the Date of last screen refresh. ( easy way to tell if the device is working properly )
+- Removed the requirement for the ibis.exe, 
 
 Future Updates
 - Create activity specific versions ( running, swimming, etc ) 
@@ -107,7 +108,7 @@ The Flash Mode one is important. Ask me how I know.
 | Button | What it does |
 |--------|--------------|
 | KEY | Nothing. Reserved for a future update |
-| BOOT | Force screen refresh and data fetch (the default 12-hour refresh counter will start after a manual refresh )|
+| BOOT | Force screen refresh and data fetch |
 | PWR | Power on/off |
 
 ---
