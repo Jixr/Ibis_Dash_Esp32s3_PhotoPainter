@@ -87,7 +87,7 @@ There is some extremely minor copy/paste editing you'll need to do in the code a
 | Flash Size | 16MB (128Mb) |
 | PSRAM | OPI PSRAM |
 | Partition Scheme | 16M Flash (3MB APP/9.9MB FATFS) |
-| 
+| USB Mode | USB-OTG" (TinyUSB) |
 
 The Flash Mode one is important. Ask me how I know.
 
