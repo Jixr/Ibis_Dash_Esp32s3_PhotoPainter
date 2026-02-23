@@ -135,9 +135,10 @@ MIT - use it, modify it, make it better. Just don't make it commercial without m
 ## Credits
 
 Original code developed by Ibisette
-Built with [GxEPD2](https://github.com/ZinggJM/GxEPD2), [ArduinoJson](https://arduinojson.org/), [XPowersLib](https://github.com/lewisxhe/XPowersLib), the Strava API, mass debugging, mass coffee, and mass vibes.
+
+Built with [GxEPD2](https://github.com/ZinggJM/GxEPD2), [ArduinoJson](https://arduinojson.org/), [XPowersLib](https://github.com/lewisxhe/XPowersLib), the Strava API, mass debugging, mass testing, and mass vibes.
 
 
 ---
 
-Remember, it doesn't count if its not on Strava
+## Remember, it doesn't count if its not on Strava
