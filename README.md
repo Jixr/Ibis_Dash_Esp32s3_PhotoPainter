@@ -2,16 +2,47 @@
 
 This is my fork of the original project, updated to fix a few hardware compatibility issues, simplified code, and a few other QOL fixes. 
 
-An e-paper dashboard that shows your Strava stats. Written with a ton of frustration, mass amounts of trial and error, and the help of Claude. But hey, it works now!
-
 The original version can be found here
 https://github.com/ibisette/Ibis_Dash_Esp32s3_PhotoPainter
+
+This version is set up specifically for cycling.
+I'm very happy with how my updated version turend out, and while I've spent the last several days reworking the original, future updates will come at a slower pace as I have many other projects and testing updates takes time.
+
+I am not a professional software developer, just a hobbiest, so I cant guarantee anything, and there may be flaws in my code. I thought OP's idea was a great idea, just wanted to clean it up and take it a step further. 
+
+
+
+An e-paper dashboard that shows your Strava stats. 
+
+
+
+IBIS_v40.1 Changes
+- The original code had a critical flaw where the device would run out of memory, showing errors and inccorect data on the screen. My version found another approach around that hardware limitation.
+- Fixed flaw where if you recorded more than 1 activity before the screen refresh, or if the battery died completely, it wouldn't count it towards your goals. 
+- Changed the "LATEST RIDE" to display the title of your last recorded strava activity ( Screen will update even if you change your activity title in strava afterwards )
+- This version is set up for cycling: "pace" now displays "Avg. Speed"
+- This will display ALL cycling activities ( Road cycling, MTB, Gravel, Cyclocross, E-bikes, and indoor rides/zwift ) 
+- Lots of code logic & formatting fixes to simplify and make the display more stable and accurate.
+- Default screen refresh is every 12 hours.
+- Battery Life optimization: The device is set to pull the strava API every 12 hours, but the screen will only refresh if there is a new strava activity ( if you only ride once a week, this could potentially extend the battery life by weeks )
+- Added a data point on the bottom right of the screen to show the Date of last screen refresh. ( easy way to tell if the device is working properly ) 
+
+Future Updates
+- Create activity specific versions ( running, swimming, etc ) 
+- I'm testing a future update where the KEY button on the back of the screen will toggle through your different activity types ( running, swimming, cycling, etc. ) Though this may or may not be possible due to hardware limitations of the device.
+- The board does have a connection for a RTC, so in theory it could be set to update at a specific time(s) of the day to help save battery life, and refresh the screen more quickly after an activity. ( example, if you typically ride in the mornings, you could have it refresh at noon, but not needlessly refresh in the middle of the night, or if you only tend to ride on the weekends, it would only power up from deep sleep mode on the weekends ) 
+- I want to create a "USB MODE" so that when the screen is powered by usb-c, it will fetch strava request much more frequently. ( ie, every 30 mins on usb power, and then if removed off usb, go back to every 12 hours ) 
+- I did attempt to add more data points to the screen ( elevation, power, heart rate, etc ) but it got too crowded, so I've left those out for simpliclity, but it is able to dispaly nearly any stat in strava if you so choose.
+
+Hardware Mods:
+  - The board does support an RTC, so adding one would enable even further battery optimization, ( example, have the screen refresh only during the day, and not in the middle of the night )
+  - Battery: it uses a standard 5v 2 pin battery, so a larger one would easily give you months of battery life. With an RTC and my previous optimizations, I predict you could get 6+ month battery life pretty easily. 
 
 ---
 
 ## What It Does
 
-Shows your running/cycling/swimming/hiking/walking stats on a nice e-ink screen. Distance, time, activity count, your route, progress toward your yearly goal. Updates automatically. Runs on battery for weeks. Looks cool on your desk.
+Shows your cycling stats on a nice e-ink screen. Distance, time, activity count, your route, progress toward your yearly goal. Updates automatically. Runs on battery for weeks. Looks cool on your desk.
 
 That's it. That's the project.
 
@@ -28,6 +59,7 @@ That's it. That's the project.
 ## How Hard Is This?
 
 There is some extremely minor copy/paste editing you'll need to do in the code and while connected to Arduino IDE. 
+
 
 ---
 
@@ -74,8 +106,8 @@ The Flash Mode one is important. Ask me how I know.
 
 | Button | What it does |
 |--------|--------------|
-| KEY | Absolutely nothing. In a future update it will cycle through your different activity types (running, swimming, cycling, etc. ) |
-| BOOT | Force screen refresh and data fetch |
+| KEY | Nothing. Reserved for a future update |
+| BOOT | Force screen refresh and data fetch (the default 12-hour refresh counter will start after a manual refresh )|
 | PWR | Power on/off |
 
 ---
@@ -102,10 +134,10 @@ MIT - use it, modify it, make it better. Just don't make it commercial without m
 
 ## Credits
 
+Original code developed by Ibisette
 Built with [GxEPD2](https://github.com/ZinggJM/GxEPD2), [ArduinoJson](https://arduinojson.org/), [XPowersLib](https://github.com/lewisxhe/XPowersLib), the Strava API, mass debugging, mass coffee, and mass vibes.
 
-Shoutout to Nerdland and some fellow nerds. 🤓
 
 ---
 
-Happy tracking! 🏃‍♂️🪶
+Remember, it doesn't count if its not on Strava
