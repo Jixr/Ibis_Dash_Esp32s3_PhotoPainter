@@ -10,7 +10,7 @@ I'm very happy with how my updated version turend out, and while I've spent the 
 
 I am not a professional software developer, just a hobbiest, so I cant guarantee anything, and there may be flaws in my code. I thought OP's idea was a great idea, just wanted to clean it up and take it a step further. 
 
-
+---
 
 An e-paper dashboard that shows your Strava stats. 
 
