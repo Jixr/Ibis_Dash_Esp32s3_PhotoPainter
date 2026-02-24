@@ -138,7 +138,7 @@ ibis-dash/
 
 - You should see on the bottom right of Arduino IDE, say "ESPD32S3 Dev Module on COM#"
 
-- If you are not able to connect your screen to Arduino IDE, hold down the BOOT button on the back of the device, connect to your PC, and only release once you see that the device is connected.
+- If you are not able to connect your screen to Arduino IDE, unplug the battery from the device, hold down the BOOT button on the back of the device, connect to your PC, and only release once you see that the device is connected.
 
 - First verify the code, and if successful, Upload the code to your screen. ( note a low memory notification is normal and expected )
 
@@ -160,7 +160,9 @@ SET_CONFIG:{"clientID":"YOUR_CLIENT_ID","clientSecret":"YOUR_CLIENT_SECRET","ref
 
 SET_CONFIG:{"goal":3000.0}
 
-- Once that's done, its all set up, you can then disconnect your screen from your pc, and have it run off battery, or a usb-c charger. 
+- Once that's done, its all set up, you can then disconnect your screen from your pc, and have it run off battery, or a usb-c charger. The screen will refresh every 12 hours from when the code was uploaded. If you wish to change how often the screen refreshes, in serial monitor, change this setting to your preference. Note, the more frequent the refresh, the more battery it will use. 
+
+SET_CONFIG:{"refreshHours":12}
 
 ## License
 
@@ -170,7 +172,7 @@ MIT - use it, modify it, make it better. Just don't make it commercial without m
 
 ## Credits
 
-Original code developed by Ibisette
+Original code developed by Ibisette, edited by myself Jixr
 
 Built with [GxEPD2](https://github.com/ZinggJM/GxEPD2), [ArduinoJson](https://arduinojson.org/), [XPowersLib](https://github.com/lewisxhe/XPowersLib), the Strava API, mass debugging, mass testing, and mass vibes.
 
