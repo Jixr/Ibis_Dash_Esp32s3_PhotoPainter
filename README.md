@@ -134,7 +134,33 @@ ibis-dash/
 
 - Open device manager>Ports (COM & LPT), you should see your device listed as "USB Serial Device (COM#)" In my case, its listed as "COM6"
 
-- Open the IBIS_V40.1.ino file
+- Open the IBIS_V40.1.ino file, and use the settings above to set the board correctly.
+
+- You should see on the bottom right of Arduino IDE, say "ESPD32S3 Dev Module on COM#"
+
+- If you are not able to connect your screen to Arduino IDE, hold down the BOOT button on the back of the device, connect to your PC, and only release once you see that the device is connected.
+
+- First verify the code, and if successful, Upload the code to your screen. ( note a low memory notification is normal and expected )
+
+- Once the code uploads to the device, go to Arduino IDE>Tools>Serial monitor
+
+- The device should be seen by your PC, if you type in "PING" you should see a "PONG" response.
+
+- If you're succesfully connected, we now need to set up your wifi, and strava information.
+
+- For wifi, copy paste the following into the serial monitor, with your wifi name and password. 
+
+SET_CONFIG:{"ssid":"YourWiFiName","password":"YourWiFiPassword"}
+
+- Next, we need to do the same thing with your strava information.
+
+SET_CONFIG:{"clientID":"YOUR_CLIENT_ID","clientSecret":"YOUR_CLIENT_SECRET","refreshToken":"YOUR_REFRESH_TOKEN"}
+
+- Lastly, the default distance goal is 3000 miles, if you wish to change it, copy/paste this code into the serial monitor ( change the 3000 to whatever distance you desire ) 
+
+SET_CONFIG:{"goal":3000.0}
+
+- Once that's done, its all set up, you can then disconnect your screen from your pc, and have it run off battery, or a usb-c charger. 
 
 ## License
 
