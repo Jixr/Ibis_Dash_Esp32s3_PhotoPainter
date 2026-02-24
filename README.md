@@ -127,6 +127,15 @@ ibis-dash/
 
 ---
 
+## Directions:
+- install Arduino IDE to your PC. Follow the standard installation instructions. 
+
+- Once Arduino IDE is installed, connected your e-ink display to the computer. 
+
+- Open device manager>Ports (COM & LPT), you should see your device listed as "USB Serial Device (COM#)" In my case, its listed as "COM6"
+
+- Open the IBIS_V40.1.ino file
+
 ## License
 
 MIT - use it, modify it, make it better. Just don't make it commercial without my consent.
